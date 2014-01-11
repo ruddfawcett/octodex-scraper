@@ -46,6 +46,10 @@
 			// var_dump($dom->saveHTML($element));
 		}
 	}
-	
-	echo json_encode($octodex)
+		
+	if (array_key_exists('random', $_GET)) {
+		// Though this is not the most efficient way to grab a random octocat, it is not significantly slower, so I'll leave it for the time being
+		echo json_encode($octodex[array_rand($octodex)]);
+	}
+	else echo json_encode($octodex);
 ?>
