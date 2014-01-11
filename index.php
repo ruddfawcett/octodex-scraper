@@ -20,7 +20,7 @@
 			$links = $tempDom->getElementsByTagName('a');
 			$images = $tempDom->getElementsByTagName('img');
 		
-			$octocatName = $links->item(0)->getAttribute('name');
+			$octocatName = $links->item(2)->nodeValue;
 			$octocatPage = $links->item(1)->getAttribute('href');
 			$octocatImage = $images->item(0)->getAttribute('data-src');
 			$octocatAuthor = $links->item(1)->getAttribute('href');
