@@ -6,7 +6,11 @@ A PHP scraper for http://octodex.github.com. You could use the feedburner RSS an
 ##Use
 The scraper is located at https://octodex-scraper.heroku.com.  You can cURL the page for the [JSON](#json-response), or `file_get_contents` it in PHP, or whatever language you are using.
 
+###Random Octocats
+To get a random Octocat, append `?random` to the url: https://octodex-scraper.heroku.com/?random.  The response will be the same as the full Octodex, but it will just be one Octocat (obviously).
+
 ##JSON Response
+Standard JSON for each Octocat - grabbing a random one, and the whole set.
 ```json
 {
     "name": "original",
@@ -30,6 +34,7 @@ The scraper is located at https://octodex-scraper.heroku.com.  You can cURL the 
 
 ##To Do
 - Add pagination
+- More efficient random octocats
 
 ##Use of Octocats
-Check out the GitHub Octodex frequently asked questions, http://octodex.github.com/faq, for specific use.  GitHub owns all of the Octocats, this scraper just grabs all of their data.
+Check out the GitHub Octodex frequently asked questions (http://octodex.github.com/faq), for specific use.  GitHub owns all of the Octocats, this scraper just grabs all of their data.
