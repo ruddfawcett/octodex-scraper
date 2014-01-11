@@ -1,4 +1,6 @@
 <?php
+	header('Content-Type: application/json');
+
 	$dom = new DOMDocument();
 	@$dom->loadHTMLFile('http://octodex.github.com/');
 
