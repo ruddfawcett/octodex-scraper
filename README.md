@@ -4,7 +4,7 @@ octodex-scraper
 A PHP scraper for http://octodex.github.com. You could use the feedburner RSS and parse that XML, but it doesn't show the author or author avatar, and I wanted to experiment with PHP's DOM.
 
 ##Use
-The scraper is located at https://octodex-scraper.heroku.com.  You can cURL the page for the [JSON](#json-response), or `file_get_contents` it in PHP, or whatever language you are using.
+The scraper is located at https://octodexapi.heroku.com (changed from octodex-scraper.heroku.com).  You can cURL the page for the [JSON](#json-response), or `file_get_contents` it in PHP, or whatever language you are using.
 
 ##Endpoints
 ###Random Octocats
@@ -40,7 +40,8 @@ Standard JSON for each Octocat - grabbing a random one, and the whole set.
 
 ##To Do
 - Add pagination
-- More efficient random octocats
+- More efficient random Octocats
+- More efficient numbered Octocats
 
 ##Use of Octocats
 Check out the GitHub Octodex frequently asked questions (http://octodex.github.com/faq), for specific use.  GitHub owns all of the Octocats, this scraper just grabs all of their data.
