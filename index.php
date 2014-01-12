@@ -46,10 +46,36 @@
 			// var_dump($dom->saveHTML($element));
 		}
 	}
-		
+	
 	if (array_key_exists('random', $_GET)) {
-		// Though this is not the most efficient way to grab a random octocat, it is not significantly slower, so I'll leave it for the time being
-		echo json_encode($octodex[array_rand($octodex)]);
+		if (array_key_exists('number', $_GET)) {
+			echo json_encode(array("error" => "Can not provide random and numbered Octocat..."));
+		}
+		else {
+			// Though this is not the most efficient way to grab a random octocat, it is not significantly slower, so I'll leave it for the time being...
+			echo json_encode($octodex[array_rand($octodex)]);
+		}
+	}
+	else if (array_key_exists('number', $_GET)) {
+		if (array_key_exists('random', $_GET)) {
+			echo json_encode(array("error" => "Can not provide random and numbered Octocat..."));
+		}
+		else {
+			if (!empty($_GET['number'])) {
+				if (!$_GET['number'] > count($octodex)) {
+					// Though this is not the most efficient way to grab a numbered octocat, it is not significantly slower, so I'll leave it for the time being...
+					foreach ($octodex as $octocat) {
+						if ($octocat['number'] == $_GET['number']) {
+							echo json_encode($octocat);
+							exit();
+						}
+						else continue;
+					}
+				}
+				else echo json_encode(array("error" => "Octocat numbered ".$_GET['number']." does not exist!"));
+			}
+			else echo json_encode(array("error" => "Please pass a number for an Octocat..."));
+		}
 	}
 	else echo json_encode($octodex);
 ?>
