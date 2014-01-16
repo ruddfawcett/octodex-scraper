@@ -23,7 +23,7 @@
 			$octocatName = $links->item(2)->nodeValue;
 			$octocatPage = $links->item(1)->getAttribute('href');
 			$octocatImage = $images->item(0)->getAttribute('data-src');
-			$octocatAuthor = $links->item(1)->getAttribute('href');
+			$octocatAuthor = $images->item(1)->getAttribute('alt');
 			$octocatNumber = $tempDom->getElementsByTagName('p')->item(0)->nodeValue;
 			$octocatAuthorURL = $links->item(3)->getAttribute('href');
 			$octocatAuthorAvatar = $images->item(1)->getAttribute('src');
